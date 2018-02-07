@@ -26,7 +26,7 @@ def index(request):
  
 
 def about(request):
-    context_dict ={'boldmessage': "Rango says here is the about page."}
+    context_dict ={'boldmessage': "Rango says here is the about page"}
     visitor_cookie_handler(request)
     context_dict['visits'] = request.session['visits']
     
@@ -114,6 +114,7 @@ def register(request):
             profile.save()
 
             registered = True
+            
         else:
             print(user_form.errors, profile_form.errors)
     else:
